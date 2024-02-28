@@ -34,36 +34,44 @@
   - [Register a new API client](#Register-a-new-API-client)
   - [Login](#User-Login)
 
-- [User](#User-Login)
+- [User](#User-API-Reference)
 
   - [Get my profile](#Get-my-profile)
-  - [Get all users](https://www.github.com/octokatherine)
-  - [View a user profile Count](https://www.github.com/octokatherine)
-  - [Following a user](https://www.github.com/octokatherine)
-  - [UnFollowing-a-user](https://www.github.com/octokatherine)
-  - [Update user password](https://www.github.com/octokatherine)
-  - [Update your profile](https://www.github.com/octokatherine)
-  - [Block another user](https://www.github.com/octokatherine)
-  - [Unblock another user](https://www.github.com/octokatherine)
-  - [Admin blocking a user](https://www.github.com/octokatherine)
-  - [Admin Unblocking a user](https://www.github.com/octokatherine)
-  - [Delete your account](https://www.github.com/octokatherine)
-  - [Upload Profile Photo](https://www.github.com/octokatherine)
+  - [Get all users](#Get-all-users)
+  - [View a user profile Count](#View-a-user-profile)
+  - [Following a user](#Following-a-user)
+  - [UnFollowing-a-user](#UnFollowing-a-user)
+  - [Update user password](#Update-user-password)
+  - [Update your profile](#Update-your-profile)
+  - [Block another user](#Block-another-user)
+  - [Unblock another user](#Unblock-another-user)
+  - [Admin blocking a user](#Admin-blocking-a-user)
+  - [Admin Unblocking a user](#Admin-Unblocking-a-user)
+  - [Delete your account](#Delete-your-account)
+  - [Upload Profile Photo](#Upload-Profile-Photo)
 
-- [Post](https://www.github.com/octokatherine)
-  - [Create Post](https://www.github.com/octokatherine)
-  - [Get All Posts](https://www.github.com/octokatherine)
-  - [Get Single Post](https://www.github.com/octokatherine)
-  - [Toggle Post like](https://www.github.com/octokatherine)
-  - [Toggle Post dislike](https://www.github.com/octokatherine)
-  - [Update Post](https://www.github.com/octokatherine)
-  - [Delete Post](https://www.github.com/octokatherine)
+- [Post](#Post-API-Reference)
+  - [Create Post](#Create-Post)
+  - [Get All Posts](#Get-All-Posts)
+  - [Get Single Post](#Get-Single-Post)
+  - [Toggle Post like](#Toggle-Post-like)
+  - [Toggle Post dislike](#Toggle-Post-dislike)
+  - [Update Post](#Update-Post)
+  - [Delete Post](#Delete-Post)
 
--[Comments](https://www.github.com/octokatherine)
+-[Comments](#Comment-API-Reference)
 
-- [Create comment](https://www.github.com/octokatherine)
-- [Update post](https://www.github.com/octokatherine)
-- [Delete post](https://www.github.com/octokatherine)
+- [Create comment](#Create-comment)
+- [Update comment](#Update-comment)
+- [Delete comment](#Delete-comment)
+
+-[Category](#Category-API-Reference)
+
+- [Create category](#Create-category)
+- [Get a single category](#Get-a-single-category)
+- [Get all category](#Get-all-category)
+- [Update category](#Update-category)
+- [Delete category](#Delete-category)
 
 # Run locally
 
@@ -123,7 +131,7 @@ POST  /api/v1/users/register
 
 The request body needs to be in JSON format.
 
-# API Reference
+# User API Reference
 
 ## User Login
 
@@ -305,3 +313,215 @@ POST: /api/v1/users/profile-photo-upload
 | :--------------- | :------- | :-------------- | :------- |
 | `authentication` | `string` | Your token      | Yes      |
 | `profilePhoto`   | `string` | Image to upload | Yes      |
+
+# Post API Reference
+
+## Create Post
+
+```
+POST: /api/v1/posts/
+```
+
+| Parameter        | Type     | Description        | Required |
+| :--------------- | :------- | :----------------- | :------- |
+| `authentication` | `string` | Your token         | Yes      |
+| `title`          | `string` | Post title         | Yes      |
+| `description`    | `string` | Post description   | Yes      |
+| `category`       | `string` | ID of the category | Yes      |
+| `photo`          | `string` | Image of the post  | Yes      |
+
+Example request body:
+
+```
+{
+  "title":"post_title",
+  "description":"post_description",
+  "category":"post_category",
+  "photo":"post_photo",
+}
+```
+
+## Get all posts
+
+```
+GET: /api/v1/posts/
+```
+
+| Parameter        | Type     | Description | Required |
+| :--------------- | :------- | :---------- | :------- |
+| `authentication` | `string` | Your token  | No       |
+
+## Get a single post
+
+```
+GET: /api/v1/posts/:id
+```
+
+| Parameter        | Type     | Description    | Required |
+| :--------------- | :------- | :------------- | :------- |
+| `authentication` | `string` | Your token     | Yes      |
+| `id            ` | `string` | ID of the post | Yes      |
+
+## Toggle post like
+
+```
+GET: /api/v1/posts/likes/:id
+```
+
+| Parameter        | Type     | Description    | Required |
+| :--------------- | :------- | :------------- | :------- |
+| `authentication` | `string` | Your token     | Yes      |
+| `id            ` | `string` | ID of the post | Yes      |
+
+## Toggle post dislike
+
+```
+GET: /api/v1/posts/dislikes/:id
+```
+
+| Parameter        | Type     | Description    | Required |
+| :--------------- | :------- | :------------- | :------- |
+| `authentication` | `string` | Your token     | Yes      |
+| `id            ` | `string` | ID of the post | Yes      |
+
+## Update Post
+
+```
+PUT: /api/v1/posts/:id
+```
+
+| Parameter        | Type     | Description        | Required |
+| :--------------- | :------- | :----------------- | :------- |
+| `authentication` | `string` | Your token         | Yes      |
+| `id`             | `string` | ID of the post     | Yes      |
+| `title`          | `string` | Post title         | Yes      |
+| `description`    | `string` | Post description   | Yes      |
+| `category`       | `string` | ID of the category | Yes      |
+| `photo`          | `string` | Image of the post  | Yes      |
+
+Example request body:
+
+```
+{
+  "title":"post_title",
+  "description":"post_description",
+  "category":"post_category",
+  "photo":"post_photo",
+}
+```
+
+## Delete post
+
+```
+DELETE: /api/v1/posts/:id
+```
+
+| Parameter        | Type     | Description    | Required |
+| :--------------- | :------- | :------------- | :------- |
+| `authentication` | `string` | Your token     | Yes      |
+| `id            ` | `string` | ID of the post | Yes      |
+
+# Comment API Reference
+
+## Create comment
+
+```
+POST /api/v1/comments/:id
+```
+
+| Parameter        | Type     | Description       | Required |
+| :--------------- | :------- | :---------------- | :------- |
+| `authentication` | `string` | Your token        | Yes      |
+| `id            ` | `string` | ID of the comment | Yes      |
+
+## Update comment
+
+```
+PUT /api/v1/comments/:id
+```
+
+| Parameter        | Type     | Description       | Required |
+| :--------------- | :------- | :---------------- | :------- |
+| `authentication` | `string` | Your token        | Yes      |
+| `id            ` | `string` | ID of the comment | Yes      |
+
+## Delete comment
+
+```
+DELETE /api/v1/comments/:id
+```
+
+| Parameter        | Type     | Description       | Required |
+| :--------------- | :------- | :---------------- | :------- |
+| `authentication` | `string` | Your token        | Yes      |
+| `id            ` | `string` | ID of the comment | Yes      |
+
+# Category API Reference
+
+## Create category
+
+```
+POST /api/v1/category/
+```
+
+| Parameter        | Type     | Description | Required |
+| :--------------- | :------- | :---------- | :------- |
+| `authentication` | `string` | Your token  | Yes      |
+
+Example request body:
+
+```
+{
+  "title":"category_title"
+}
+```
+
+## Get a single category
+
+```
+GET /api/v1/category/:id
+```
+
+| Parameter        | Type     | Description        | Required |
+| :--------------- | :------- | :----------------- | :------- |
+| `authentication` | `string` | Your token         | No       |
+| `id`             | `string` | ID of the category | Yes      |
+
+## Get all category
+
+```
+GET /api/v1/category/
+```
+
+| Parameter        | Type     | Description | Required |
+| :--------------- | :------- | :---------- | :------- |
+| `authentication` | `string` | Your token  | No       |
+
+## Update a category
+
+```
+POST /api/v1/category/
+```
+
+| Parameter        | Type     | Description        | Required |
+| :--------------- | :------- | :----------------- | :------- |
+| `authentication` | `string` | Your token         | Yes      |
+| `id`             | `string` | ID of the category | Yes      |
+
+Example request body:
+
+```
+{
+  "title":"category_title"
+}
+```
+
+## Delete a category
+
+```
+DELETE /api/v1/category/:id
+```
+
+| Parameter        | Type     | Description | Required |
+| :--------------- | :------- | :---------- | :------- |
+| `authentication` | `string` | Your token  | Yes      |
