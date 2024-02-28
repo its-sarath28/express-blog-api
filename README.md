@@ -500,7 +500,7 @@ GET /api/v1/category/
 ## Update a category
 
 ```
-POST /api/v1/category/
+POST /api/v1/category/:id
 ```
 
 | Parameter        | Type     | Description        | Required |
@@ -522,6 +522,7 @@ Example request body:
 DELETE /api/v1/category/:id
 ```
 
-| Parameter        | Type     | Description | Required |
-| :--------------- | :------- | :---------- | :------- |
-| `authentication` | `string` | Your token  | Yes      |
+| Parameter        | Type     | Description        | Required |
+| :--------------- | :------- | :----------------- | :------- |
+| `authentication` | `string` | Your token         | Yes      |
+| `id`             | `string` | ID of the category | Yes      |
