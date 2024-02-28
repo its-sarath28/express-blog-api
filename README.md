@@ -29,14 +29,14 @@
 
 # End-points
 
-- [API Authentication]()
+- [API Authentication](#API-Authentication)
 
-  - [Register a new API client](# Register a new API client)
-  - [Login](#User Login)
+  - [Register a new API client](#Register-a-new-API-client)
+  - [Login](#User-Login)
 
-- [User](https://www.github.com/octokatherine)
+- [User](#User-Login)
 
-  - [Get my profile](https://www.github.com/octokatherine)
+  - [Get my profile](#Get-my-profile)
   - [Get all users](https://www.github.com/octokatherine)
   - [View a user profile Count](https://www.github.com/octokatherine)
   - [Following a user](https://www.github.com/octokatherine)
