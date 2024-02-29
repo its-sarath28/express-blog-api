@@ -51,6 +51,7 @@
   - [Upload Profile Photo](#Upload-Profile-Photo)
 
 - [Post](#Post-API-Reference)
+
   - [Create Post](#Create-Post)
   - [Get All Posts](#Get-All-Posts)
   - [Get Single Post](#Get-Single-Post)
@@ -59,26 +60,26 @@
   - [Update Post](#Update-Post)
   - [Delete Post](#Delete-Post)
 
--[Comments](#Comment-API-Reference)
+- [Comments](#Comment-API-Reference)
 
-- [Create comment](#Create-comment)
-- [Update comment](#Update-comment)
-- [Delete comment](#Delete-comment)
+  - [Create comment](#Create-comment)
+  - [Update comment](#Update-comment)
+  - [Delete comment](#Delete-comment)
 
--[Category](#Category-API-Reference)
+- [Category](#Category-API-Reference)
 
-- [Create category](#Create-category)
-- [Get a single category](#Get-a-single-category)
-- [Get all category](#Get-all-category)
-- [Update category](#Update-category)
-- [Delete category](#Delete-category)
+  - [Create category](#Create-category)
+  - [Get a single category](#Get-a-single-category)
+  - [Get all category](#Get-all-category)
+  - [Update category](#Update-category)
+  - [Delete category](#Delete-category)
 
 # Run locally
 
 Clone the Project
 
 ```
-git clone
+git clone https://github.com/its-sarath28/express-blog-api.git
 ```
 
 Go to project directory
