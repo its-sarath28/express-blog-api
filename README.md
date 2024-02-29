@@ -54,7 +54,7 @@
 
   - [Create Post](#Create-Post)
   - [Get All Posts](#Get-All-Posts)
-  - [Get Single Post](#Get-Single-Post)
+  - [Get a Single Post](#Get-a-single-post)
   - [Toggle Post like](#Toggle-Post-like)
   - [Toggle Post dislike](#Toggle-Post-dislike)
   - [Update Post](#Update-Post)
